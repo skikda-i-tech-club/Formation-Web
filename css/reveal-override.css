@@ -1,0 +1,38 @@
+body {
+  /* background: rgb(97,140,189); */
+  /* background: linear-gradient(0deg, rgba(97,140,189,1) 0%, rgba(212,228,247,1) 20%, rgba(212,228,247,1) 80%, rgba(97,140,189,1) 100%); */
+  background-color: rgb(212,228,247);
+  /* background-image: url(/img/logo.png), radial-gradient(circle, rgba(212,228,247,1) 80%, rgba(97,140,189,1) 100%); */
+  background-image: url(/img/logo.png), radial-gradient(circle, rgba(255,255,255,1) 75%, rgba(200,200,200,1) 100%);
+  background-size: 20%, cover;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+}
+
+.reveal {
+  /* color: #190934; */
+  color: #427fbf;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  /* color: #183BF0; */
+  color: #634da0;
+}
+
+.reveal section img {
+  background: rgba(0, 0, 0, 0);
+}
+
+.reveal .controls .controls-arrow {
+  /* color: #183BF0; */
+  color: #634da0;
+}
+
+.reveal .progress {
+  color: #427fbf;
+}

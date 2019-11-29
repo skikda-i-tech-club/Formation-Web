@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction au Web</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- Reveal.js theme -->
+		<link rel="stylesheet" href="css/black.css">
+		<!-- Highlight.js theme -->
+		<link rel="stylesheet" href="css/monokai.css">
+		<!-- Reveal.js theme override -->
+		<link rel="stylesheet" href="css/reveal-override.css">
+
+	</head>
+	<body>
+
+		<div class="reveal"><div class="slides" import="slides/index.html"></div></div>
+
+		<script src="js/reveal.js"></script>
+		<script src="js/jquery.slim.min.js"></script>
+		<script src="js/p5.min.js"></script>
+		<script src="js/import.js"></script>
+		<script>
+importAll(() => {
+	$('[f]').each(function() {
+		this.classList.add("fragment");
+	});
+	Reveal.initialize({
+		hash: true,
+		math: {
+			mathjax: 'js/MathJax/MathJax.js',
+			config: 'TeX-AMS_CHTML'
+		},
+		dependencies: [
+			{ src: 'js/highlight.js', async: true },
+			{ src: 'js/math.js', async: true }
+		]
+	});
+	Reveal.configure({ slideNumber: 'c/t' });
+});
+		</script>
+	</body>
+</html>
