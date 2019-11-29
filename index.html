@@ -6,6 +6,7 @@
 
 		<title>Introduction au Web</title>
 
+		<link rel="stylesheet" href="css/fontawesome.min.css">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<!-- Reveal.js theme -->
@@ -18,7 +19,10 @@
 	</head>
 	<body>
 
-		<div class="reveal"><div class="slides" import="slides/index.html"></div></div>
+		<div class="reveal">
+			<div class="slides" import="slides/index.html"></div>
+		</div>
+		<i id="fullscreen-button" class="fa fa-clickable fa-expand"></i>
 
 		<script src="js/reveal.js"></script>
 		<script src="js/jquery.slim.min.js"></script>
@@ -28,6 +32,13 @@
 importAll(() => {
 	$('[f]').each(function() {
 		this.classList.add("fragment");
+		this.removeAttribute("f");
+	});
+	$('[fc]').each(function() {
+		for (let child of this.children) {
+			child.classList.add("fragment");
+		}
+		this.removeAttribute("f");
 	});
 	Reveal.initialize({
 		hash: true,
@@ -41,6 +52,26 @@ importAll(() => {
 		]
 	});
 	Reveal.configure({ slideNumber: 'c/t' });
+});
+
+let isInFullscreen = false;
+$('#fullscreen-button').click(function() {
+	console.log('ok');
+	const active = () => {
+		isInFullscreen = true;
+		$('#fullscreen-button').toggleClass("fa-expand");
+		$('#fullscreen-button').toggleClass("fa-compress");
+	};
+	const inactive = () => {
+		isInFullscreen = false;
+		$('#fullscreen-button').toggleClass("fa-expand");
+		$('#fullscreen-button').toggleClass("fa-compress");
+	};
+	if (isInFullscreen) {
+		document.exitFullscreen().then(inactive, active);
+	} else {
+		document.documentElement.requestFullscreen().then(active, inactive);
+	}
 });
 		</script>
 	</body>
